@@ -3,7 +3,7 @@ import {ItemSliding, NavController} from 'ionic-angular';
 import {ProfilePage} from '../profile/profile';
 import {ChatmainPage} from '../chatmain/chatmain';
 import {ChatindPage} from '../chatind/chatind';
-import {PhotoPage} from '../photo/photo';
+import {SettingsPage} from '../settings/settings';
 import {LoginPage} from '../login/login';
 import {DomSanitizer} from "@angular/platform-browser";
 
@@ -28,9 +28,10 @@ export class HomePage {
       backgroundColor: '#e92828'
     }
   };
-  images = ["assets/imgs/stuhl.jpg",
-    "assets/imgs/stuhl.jpg",
-    "assets/imgs/stuhl.jpg",
+  images = ["assets/imgs/stuhl1.jpg",
+    "assets/imgs/stuhl2.jpg",
+    "assets/imgs/stuhl3.jpg",
+    "assets/imgs/stuhl4.jpg",
   ];
 
   /**
@@ -63,7 +64,7 @@ export class HomePage {
   }
 
   pho() {
-    this.navCtrl.push(PhotoPage)
+    this.navCtrl.push(SettingsPage)
   }
 
   lgn() {

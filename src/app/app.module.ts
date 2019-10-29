@@ -10,7 +10,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { MatchPage } from '../pages/match/match';
 import { ChatmainPage } from '../pages/chatmain/chatmain';
 import { ChatindPage } from '../pages/chatind/chatind';
-import { PhotoPage } from '../pages/photo/photo';
+import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage } from '../pages/login/login';
 
 import { SwipeCardsModule } from 'ng2-swipe-cards';
@@ -23,7 +23,7 @@ import { SwipeCardsModule } from 'ng2-swipe-cards';
     MatchPage,
     ChatmainPage,
     ChatindPage,
-    PhotoPage,
+    SettingsPage,
     LoginPage
   ],
   imports: [
@@ -39,7 +39,7 @@ import { SwipeCardsModule } from 'ng2-swipe-cards';
     MatchPage,
     ChatmainPage,
     ChatindPage,
-    PhotoPage,
+    SettingsPage,
     LoginPage
   ],
   providers: [
