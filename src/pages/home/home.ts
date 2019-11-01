@@ -1,5 +1,5 @@
 import {Component, EventEmitter} from '@angular/core';
-import {ItemSliding, NavController} from 'ionic-angular';
+import {ItemSliding, NavController, Platform} from 'ionic-angular';
 import {ProfilePage} from '../profile/profile';
 import {ChatmainPage} from '../chatmain/chatmain';
 import {ChatindPage} from '../chatind/chatind';
@@ -39,7 +39,7 @@ export class HomePage {
    * @param sanitizer Helper to prevent Cross Site Scripting Security bugs
    * @param navCtrl the navigation controller
    */
-  constructor(private sanitizer: DomSanitizer, public navCtrl: NavController) {
+  constructor(private sanitizer: DomSanitizer, public navCtrl: NavController, private platform: Platform) {
     for (let i = 0; i < this.images.length; i++) {
       this.attendants.push({
         id: i + 1,
@@ -80,11 +80,11 @@ export class HomePage {
   unread(item: ItemSliding) {
   }
 
-  /**
-   *
-   * @param event
-   */
   onCardInteract(event) {
     console.log(event);
+  }
+
+  close() {
+    this.platform.exitApp();
   }
 }
