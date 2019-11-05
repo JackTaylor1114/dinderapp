@@ -32,3 +32,9 @@ Then execute `ionic serve` to run the app.
 `docker-compose up`
 
 visit http://localhost:8100/
+
+### Deployment
+
+running on docker swarm with Traefik 2.0 as reverse-proxy
+
+URL: https://dinder.fschl-co.de/

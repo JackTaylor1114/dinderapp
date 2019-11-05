@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  dinder:
+    image: "local/dinder"
+    networks:
+      - traefik
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      placement:
+        constraints:
+          - "node.role == manager"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.dinder.rule=Host(`dinder.fschl-co.de`)"
+        - "traefik.http.routers.dinder.tls.certresolver=letsencrypt"
+        - "traefik.http.services.dinder.loadbalancer.server.port=8100"
+    
+networks:
+  traefik:
+    external: true

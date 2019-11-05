@@ -1,0 +1,10 @@
+version: '2.4'
+
+services:
+  dinder:
+    volumes:
+      - type: bind
+        source: ./src/
+        target: /usr/src/app/src/
+    ports:
+      - 9222:9222 

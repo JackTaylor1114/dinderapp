@@ -1,11 +1,11 @@
 {
   "name": "dinder",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "WHZ Inf Masters",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "start": "ionic-app-scripts serve",
+    "start": "ionic-app-scripts serve --no-browser --watch",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint"
@@ -35,5 +35,5 @@
     "@ionic/app-scripts": "3.2.2",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "Design Tinder"
 }
