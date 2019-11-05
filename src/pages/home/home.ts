@@ -6,6 +6,7 @@ import {ChatindPage} from '../chatind/chatind';
 import {SettingsPage} from '../settings/settings';
 import {LoginPage} from '../login/login';
 import {DomSanitizer} from "@angular/platform-browser";
+import {HttpClient} from "@angular/common/http";
 
 /**
  * Class representing the Home page
@@ -38,8 +39,10 @@ export class HomePage {
    * Constructor for Home-Class
    * @param sanitizer Helper to prevent Cross Site Scripting Security bugs
    * @param navCtrl the navigation controller
+   * @param platform the app platform
+   * @param httpClient the httpCleint
    */
-  constructor(private sanitizer: DomSanitizer, public navCtrl: NavController, private platform: Platform) {
+  constructor(private sanitizer: DomSanitizer, public navCtrl: NavController, private platform: Platform, private httpClient: HttpClient) {
     for (let i = 0; i < this.images.length; i++) {
       this.attendants.push({
         id: i + 1,
@@ -49,6 +52,17 @@ export class HomePage {
       });
     }
     this.ready = true;
+    this.getImages();
+  }
+
+  /**
+   * Do a HTTP-GET to the backend to get the images for displaying
+   * TODO: Actual implementation
+   */
+  getImages() {
+    this.httpClient.get('https://jsonplaceholder.typicode.com/posts').pipe().subscribe((response) => {
+      console.log(response[0].body);
+    });
   }
 
   prof() {
