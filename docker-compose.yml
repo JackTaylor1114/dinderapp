@@ -1,0 +1,9 @@
+version: '2.4'
+
+services:
+  dinder:
+    image: "local/dinder"
+    ports:
+      - 8100:8100
+    restart: "unless-stopped"
+    
